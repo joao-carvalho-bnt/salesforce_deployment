@@ -16,7 +16,8 @@ RUN apk add --update --no-cache  \
       jq
 
 # install Salesforce CLI from npm
-RUN wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+#RUN wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+RUN npm install @salesforce/cli --global
 RUN mkdir sfdx-cli
 RUN tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
 RUN ./sfdx-cli/install
